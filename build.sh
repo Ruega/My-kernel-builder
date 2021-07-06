@@ -56,7 +56,7 @@ DEFCONFIG=X00TD_defconfig
 MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
-NAMA=Dirty
+NAMA=Signature
 JENIS=HMP
 # Build Type
 BUILD_TYPE="BETA alias uji coba"
