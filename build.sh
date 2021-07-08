@@ -57,13 +57,14 @@ MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
 NAMA=Signature
-JENIS=HMP
+JENIS=EAS
+VARIAN=Stock
 # Build Type
-BUILD_TYPE="BETA alias uji coba"
+BUILD_TYPE="Nightly"
 
 # Specify compiler.
 # 'clang' or 'clangxgcc' or 'gcc'
-COMPILER=clang
+COMPILER=gcc
 
 # Kernel is LTO
 LTO=0
@@ -406,10 +407,12 @@ gen_zip() {
         
          <b>Compiler</b>
         -<code>$KBUILD_COMPILER_STRING</code>
-        
+
         <b>Changelog</b>
-        - <code>$COMMIT_HEAD</code>"
+        - <code>$COMMIT_HEAD</code>
         
+        <code>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</code>
+        #$BUILD_TYPE #$VARIANT  #$JENIS"
 	cd ..
 }
 
