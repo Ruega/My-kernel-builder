@@ -50,15 +50,15 @@ DEVICE="X00TD"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=X00TD_defconfig
+DEFCONFIG=X00T_defconfig
 
 # Show manufacturer info
 MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
-NAMA=Signature
-JENIS=EAS-R2
-VARIAN=Bot
+NAMA=Cliquers
+JENIS=HMP
+VARIAN=LITE
 # Build Type
 BUILD_TYPE="Nightly"
 
@@ -138,7 +138,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 	if [ $COMPILER = "clang" ]
 	then
 		msg "|| Cloning toolchain ||"
-		git clone --depth=1 https://github.com/fajar4561/SignatureTC_Clang -b master clang
+		git clone --depth=1 https://github.com/kdrag0n/proton-clang -b master clang
 
 	elif [ $COMPILER = "gcc" ]
 	then
@@ -187,8 +187,8 @@ setversioning() {
 ##--------------------------------------------------------------##
 
 exports() {
-	export KBUILD_BUILD_USER="Nobody"
-    export KBUILD_BUILD_HOST="Unknown"
+	export KBUILD_BUILD_USER="nobody"
+    export KBUILD_BUILD_HOST="android-build"
     export KBUILD_BUILD_VERSION="1"
 	export ARCH=arm64
 	export SUBARCH=arm64
