@@ -50,7 +50,7 @@ DEVICE="X00TD"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=ruega_defconfig
+DEFCONFIG=X00T_defconfig
 
 # Show manufacturer info
 MANUFACTURERINFO="ASUSTek Computer Inc."
@@ -58,7 +58,7 @@ MANUFACTURERINFO="ASUSTek Computer Inc."
 # Kernel Variant
 NAMA=Cliquers
 JENIS=HMP
-VARIAN=CAF
+VARIAN=Stable
 # Build Type
 BUILD_TYPE="Nightly"
 
