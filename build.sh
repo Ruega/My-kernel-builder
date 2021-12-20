@@ -57,7 +57,7 @@ MANUFACTURERINFO="ASUSTek Computer Inc."
 # Kernel Variant
 NAMA=Electro
 JENIS=Wizard
-VARIAN=LV
+VARIAN=NLV
 
 # Build Type
 BUILD_TYPE="Nightly"
