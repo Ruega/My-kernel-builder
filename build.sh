@@ -55,7 +55,7 @@ DEFCONFIG=wizard_defconfig
 MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
-NAMA=Electro
+NAMA=[EAS]Electro
 JENIS=Wizard
 VARIAN=LV
 
