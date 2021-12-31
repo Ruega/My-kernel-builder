@@ -140,7 +140,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 	if [ $COMPILER = "clang" ]
 	then
 		msg "|| Cloning toolchain ||"
-		git clone --depth=1 https://github.com/kdrag0n/proton-clang.git -b master clang
+		git clone --depth=1 https://github.com/Kneba/venom-clang.git -b master clang
 
 	elif [ $COMPILER = "gcc49" ]
 	then
@@ -196,7 +196,7 @@ setversioning() {
 exports() {
 	export KBUILD_BUILD_USER="queen"
 	export KBUILD_BUILD_HOST="18ded16aaef9"
-	export KBUILD_BUILD_VERSION="2"
+	export KBUILD_BUILD_VERSION="1"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
@@ -393,7 +393,6 @@ gen_zip() {
 		mv "$KERNEL_DIR"/out/arch/arm64/boot/dtbo.img AnyKernel3/dtbo.img
 	fi
 	cd AnyKernel3 || exit
-	cp -af "$KERNEL_DIR"/init.WizardSpectrum.rc init.spectrum.rc && sed -i "s/persist.spectrum.kernel.*/persist.spectrum.kernel Tiktodzs/g" init.spectrum.rc
 	cp -af anykernel-real.sh anykernel.sh
 	sed -i "s/kernel.string=.*/kernel.string=$NAMA-$JENIS/g" anykernel.sh
 	sed -i "s/kernel.for=.*/kernel.for=$VARIAN/g" anykernel.sh
