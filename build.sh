@@ -57,7 +57,7 @@ MANUFACTURERINFO="ASUSTek Computer Inc."
 # Kernel Variant
 NAMA=[EAS]Electro
 JENIS=Wizard
-VARIAN=Zeppelin
+VARIAN=Siren
 TYPE=NLV
 
 # Build Type
