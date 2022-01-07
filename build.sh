@@ -57,8 +57,8 @@ MANUFACTURERINFO="ASUSTek Computer Inc."
 # Kernel Variant
 NAMA=Electro
 JENIS=Wizard
-VARIAN=HMP
-TYPE=NLV
+VARIAN=NLV
+ANU=HMP
 
 # Build Type
 BUILD_TYPE="Nightly"
@@ -186,7 +186,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 # Function to replace defconfig versioning
 setversioning() {
     # For staging branch
-    KERNELNAME="$NAMA-$JENIS-$VARIAN-$TYPE-$LINUXVER"
+    KERNELNAME="$NAMA-$JENIS-$VARIAN-$LINUXVER-$ANU"
     # Export our new localversion and zipnames
     export KERNELNAME
     export ZIPNAME="$KERNELNAME.zip"
