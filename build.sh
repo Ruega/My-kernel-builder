@@ -50,15 +50,16 @@ DEVICE="X00TD"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=ruega_defconfig
+DEFCONFIG=X00TD_defconfig
 
 # Show manufacturer info
 MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
-NAMA=Ruega
-JENIS=EAS
-VARIAN=Stable
+NAMA=TheOneMemory
+JENIS=HMP
+VARIAN=Hayzel
+
 # Build Type
 BUILD_TYPE="Nightly"
 
@@ -164,7 +165,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 		GCC32_DIR=$KERNEL_DIR/gcc32
 
 	msg "|| Cloning Anykernel ||"
-        git clone https://github.com/fajar4561/Anykernel.git -b master AnyKernel3
+        git clone https://github.com/HoleDroid/AnyKernel3.git -b main AnyKernel3
 
 	if [ $BUILD_DTBO = 1 ]
 	then
