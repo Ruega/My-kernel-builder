@@ -139,7 +139,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 	if [ $COMPILER = "clang" ]
 	then
 		msg "|| Cloning toolchain ||"
-		git clone --depth=1 https://github.com/kdrag0n/proton-clang -b master clang
+		git clone --depth=1 https://github.com/Kneba/venom-clang -b master clang
 
 	elif [ $COMPILER = "gcc" ]
 	then
@@ -317,32 +317,33 @@ build_kernel() {
 	if [ $COMPILER = "clang" ]
 	then
 		make -j"$PROCS" O=out \
-		        CC=clang \
-				CROSS_COMPILE=aarch64-linux-gnu- \
-				CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
+				CC=clang \
 				AR=llvm-ar \
-                NM=llvm-nm \
-                OBJCOPY=llvm-objcopy \
-                OBJDUMP=llvm-objdump \
-                CLANG_TRIPLE=aarch64-linux-gnu- \
+				NM=llvm-nm \
+				OBJCOPY=llvm-objcopy \
+				OBJDUMP=llvm-objdump \
+				CROSS_COMPILE=aarch64-linux-gnu- \
+				CROSS_COMPILE_ARM32=arm-linux-gnueabi-
 				STRIP=llvm-strip "${MAKE[@]}" 2>&1 | tee build.log
+
 	elif [ $COMPILER = "gcc" ]
 	then
 		make -j"$PROCS" O=out \
 				CROSS_COMPILE_ARM32=arm-linux-androideabi- \
 				CROSS_COMPILE=aarch64-linux-android- "${MAKE[@]}" 2>&1 | tee build.log
+
 	elif [ $COMPILER = "clangxgcc" ]
 	then
 		make -j"$PROCS"  O=out \
-					CC=clang \
-					CROSS_COMPILE=aarch64-linux-gnu- \
-					CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
-					AR=llvm-ar \
-                    NM=llvm-nm \
-                    OBJCOPY=llvm-objcopy \
-                    OBJDUMP=llvm-objdump \
-                    CLANG_TRIPLE=aarch64-linux-gnu- \
-				    STRIP=llvm-strip "${MAKE[@]}" 2>&1 | tee build.log
+				CC=clang \
+				CROSS_COMPILE=aarch64-linux-gnu- \
+				CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
+				AR=llvm-ar \
+				NM=llvm-nm \
+				OBJCOPY=llvm-objcopy \
+				OBJDUMP=llvm-objdump \
+				CLANG_TRIPLE=aarch64-linux-gnu- \
+				STRIP=llvm-strip "${MAKE[@]}" 2>&1 | tee build.log
 	fi
 
 		BUILD_END=$(date +"%s")
