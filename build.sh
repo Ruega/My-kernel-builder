@@ -2,7 +2,7 @@
 # shellcheck disable=SC2154
  # Script For Building Android arm64 Kernel
  #
- # Copyright (c) 2018-2021 Panchajanya1999 <rsk52959@gmail.com>
+ # Copyright (c) 2018-2022 Panchajanya1999 <rsk52959@gmail.com>
  #
  # Licensed under the Apache License, Version 2.0 (the "License");
  # you may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ BUILD_TYPE="Nightly"
 
 # Specify compiler.
 # 'clang' or 'clangxgcc' or 'gcc' or 'gcc49'
-COMPILER=gcc
+COMPILER=clang
 
 # Message on anykernel when installation
 MESSAGE="don't blame me if u get poor battery backup or weak performance . i'm not responsible . Do with Your Own Risk."
