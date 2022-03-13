@@ -58,7 +58,7 @@ MANUFACTURERINFO="ASUSTek Computer Inc."
 NAMA=EW
 JENIS=Zeppelin
 VARIAN=HMP
-ANU=TPD
+ANU=DCLICK
 
 # Build Type
 BUILD_TYPE="Nightly"
