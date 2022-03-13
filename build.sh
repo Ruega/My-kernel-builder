@@ -267,7 +267,7 @@ tg_post_build() {
 
 tg_send_sticker() {
     curl -s -X POST "https://api.telegram.org/bot#TOKEN/sendSticker" \
-        -d sticker="CAACAgUAAxkBAAFkTXdiLjArb2wP_VnzM7hDxBm2VYZX5QACEgUAAj4wcVXxVqNjnSWkhyME" \
+        -d sticker="$1" \
         -d chat_id="$CHATID"
 }
 
@@ -277,7 +277,6 @@ tg_send_files(){
     KernelFiles="$KERNEL_DIR/AnyKernel3/$ZIP_RELEASE.zip"
 	MD5CHECK=$(md5sum "$KernelFiles" | cut -d' ' -f1)
 	SID="CAACAgUAAxkBAAFkTP5iLi74F4Ye3YTzUsVlajwzdcKlPgACEgUAAj4wcVXxVqNjnSWkhyME"
-	STICK="CAACAgUAAxkBAAFkTP5iLi74F4Ye3YTzUsVlajwzdcKlPgACEgUAAj4wcVXxVqNjnSWkhyME"
     MSG="✅ <b>Build Done</b>
 - <code>$((DIFF / 60)) minute(s) $((DIFF % 60)) second(s) </code>
 
