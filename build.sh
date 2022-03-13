@@ -267,7 +267,7 @@ tg_post_build() {
 
 tg_send_sticker() {
     curl -s -X POST "https://api.telegram.org/bot#TOKEN/sendSticker" \
-        -d sticker="$1" \
+        -d sticker="CAACAgUAAxkBAAFkTXdiLjArb2wP_VnzM7hDxBm2VYZX5QACEgUAAj4wcVXxVqNjnSWkhyME" \
         -d chat_id="$CHATID"
 }
 
