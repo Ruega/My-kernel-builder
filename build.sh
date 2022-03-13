@@ -55,10 +55,10 @@ DEFCONFIG=X00TD_defconfig
 MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
-NAMA=Electro
-JENIS=Wizard
+NAMA=Electro-Wizard
+JENIS=Siren
 VARIAN=HMP
-ANU=PLUS
+ANU=TPD
 
 # Build Type
 BUILD_TYPE="Nightly"
@@ -186,7 +186,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 # Function to replace defconfig versioning
 setversioning() {
     # For staging branch
-    KERNELNAME="$NAMA-$JENIS-$VARIAN-$LINUXVER-$ANU"
+    KERNELNAME="$NAMA-$JENIS-$VARIAN-$ANU-$LINUXVER"
     # Export our new localversion and zipnames
     export KERNELNAME
     export ZIPNAME="$KERNELNAME.zip"
@@ -197,7 +197,7 @@ setversioning() {
 exports() {
 	export KBUILD_BUILD_USER="queen"
 	export KBUILD_BUILD_HOST="18ded16aaef9"
-	export KBUILD_BUILD_VERSION="5"
+	export KBUILD_BUILD_VERSION="1"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
@@ -395,14 +395,13 @@ gen_zip() {
 	fi
 	cd AnyKernel3 || exit
 	cp -af anykernel-real.sh anykernel.sh
-	sed -i "s/kernel.string=.*/kernel.string=$NAMA-$JENIS-$VARIAN-$ANU-$DATE2/g" anykernel.sh
-	sed -i "s/kernel.for=.*/kernel.for=$VARIAN/g" anykernel.sh
-	sed -i "s/kernel.compiler=.*/kernel.compiler=$KBUILD_COMPILER_STRING/g" anykernel.sh
+	sed -i "s/kernel.string=.*/kernel.string=$NAMA/g" anykernel.sh
+	sed -i "s/kernel.for=.*/kernel.for=$VARIAN-$ANU/g" anykernel.sh
+	sed -i "s/kernel.compiler=.*/kernel.compiler=GCC-10.2/g" anykernel.sh
 	sed -i "s/kernel.made=.*/kernel.made=Tiktod/g" anykernel.sh
 	sed -i "s/kernel.version=.*/kernel.version=$LINUXVER/g" anykernel.sh
 	sed -i "s/message.word=.*/message.word=$MESSAGE/g" anykernel.sh
 	sed -i "s/build.date=.*/build.date=$DATE2/g" anykernel.sh
-
 
 	zip -r9 "$ZIPNAME" * -x .git README.md anykernel-real.sh .gitignore zipsigner* *.zip
 
