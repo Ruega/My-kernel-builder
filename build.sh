@@ -55,7 +55,7 @@ DEFCONFIG=X00TD_defconfig
 MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
-NAMA=Electro-Wizard
+NAMA=EW
 JENIS=Siren
 VARIAN=HMP
 ANU=TPD
