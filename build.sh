@@ -100,7 +100,7 @@ BUILD_DTBO=0
 
 # Sign the zipfile
 # 1 is YES | 0 is NO
-SIGN=1
+SIGN=0
 	if [ $SIGN = 1 ]
 	then
 		#Check for java
@@ -266,7 +266,7 @@ tg_post_build() {
 ##----------------------------------------------------------------##
 
 tg_send_sticker() {
-    curl -s -X POST "https://api.telegram.org/bot$TOKEN/sendSticker" \
+    curl -s -X POST "https://api.telegram.org/bot#TOKEN/sendSticker" \
         -d sticker="$1" \
         -d chat_id="$CHATID"
 }
@@ -276,8 +276,8 @@ tg_send_sticker() {
 tg_send_files(){
     KernelFiles="$KERNEL_DIR/AnyKernel3/$ZIP_RELEASE.zip"
 	MD5CHECK=$(md5sum "$KernelFiles" | cut -d' ' -f1)
-	SID="CAACAgUAAx0CR6Ju_gADT2DeeHjHQGd-79qVNI8aVzDBT_6tAAK8AQACwvKhVfGO7Lbi7poiIAQ"
-	STICK="CAACAgUAAx0CR6Ju_gADT2DeeHjHQGd-79qVNI8aVzDBT_6tAAK8AQACwvKhVfGO7Lbi7poiIAQ"
+	SID="CAACAgUAAxkBAAFkTP5iLi74F4Ye3YTzUsVlajwzdcKlPgACEgUAAj4wcVXxVqNjnSWkhyME"
+	STICK="CAACAgUAAxkBAAFkTP5iLi74F4Ye3YTzUsVlajwzdcKlPgACEgUAAj4wcVXxVqNjnSWkhyME"
     MSG="✅ <b>Build Done</b>
 - <code>$((DIFF / 60)) minute(s) $((DIFF % 60)) second(s) </code>
 
