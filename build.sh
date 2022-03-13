@@ -56,7 +56,7 @@ MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
 NAMA=EW
-JENIS=Zeppelin
+JENIS=Siren
 VARIAN=HMP
 ANU=DCLICK
 
