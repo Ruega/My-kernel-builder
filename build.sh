@@ -56,7 +56,7 @@ MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
 NAMA=EW
-JENIS=Siren
+JENIS=Zeppelin
 VARIAN=HMP
 ANU=TPD
 
@@ -430,7 +430,7 @@ gen_zip() {
         <b>🆑 Changelog: </b>
         - <code>$COMMIT_HEAD</code>
         <b></b>
-        #$NAMA #$JENIS #$VARIAN"
+        #$NAMA #$JENIS #$VARIAN #$ANU"
 
 	cd ..
 }
