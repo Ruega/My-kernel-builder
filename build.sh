@@ -57,8 +57,8 @@ MANUFACTURERINFO="ASUSTek Computer Inc."
 # Kernel Variant
 NAMA=EW
 JENIS=Siren
-VARIAN=HMP
-ANU=DCLICK
+VARIAN=EAS
+ANU=TPD
 
 # Build Type
 BUILD_TYPE="Nightly"
@@ -141,7 +141,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 	if [ $COMPILER = "clang" ]
 	then
 		msg "|| Cloning toolchain ||"
-		git clone --depth=1 https://gitlab.com/LeCmnGend/proton-clang -b clang-15 clang
+		git clone --depth=1 https://gitlab.com/LeCmnGend/proton-clang -b clang-14 clang
 
 	elif [ $COMPILER = "gcc49" ]
 	then
@@ -172,7 +172,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 		GCC32_DIR=$KERNEL_DIR/gcc32
 
 	msg "|| Cloning Anykernel ||"
-        git clone https://github.com/Tiktodz/AnyKernel3.git -b main AnyKernel3
+        git clone https://github.com/Tiktodz/AnyKernel3.git -b eas AnyKernel3
 
 	if [ $BUILD_DTBO = 1 ]
 	then
@@ -197,7 +197,7 @@ setversioning() {
 exports() {
 	export KBUILD_BUILD_USER="queen"
 	export KBUILD_BUILD_HOST="18ded16aaef9"
-	export KBUILD_BUILD_VERSION="2"
+	export KBUILD_BUILD_VERSION="1"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
