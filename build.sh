@@ -56,7 +56,7 @@ MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
 NAMA=EW
-JENIS=Siren
+JENIS=Zeppelin
 VARIAN=HMP
 ANU=CAF
 
@@ -196,7 +196,7 @@ setversioning() {
 
 exports() {
 	export KBUILD_BUILD_USER="queen"
-	export KBUILD_BUILD_VERSION="5"
+	export KBUILD_BUILD_VERSION="1"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
@@ -395,7 +395,7 @@ gen_zip() {
 	cp -af anykernel-real.sh anykernel.sh
 	sed -i "s/kernel.string=.*/kernel.string=$NAMA/g" anykernel.sh
 	sed -i "s/kernel.for=.*/kernel.for=$VARIAN-$ANU/g" anykernel.sh
-	sed -i "s/kernel.compiler=.*/kernel.compiler=GCC-10.2/g" anykernel.sh
+	sed -i "s/kernel.compiler=.*/kernel.compiler=$KBUILD_COMPILER_STRING/g" anykernel.sh
 	sed -i "s/kernel.made=.*/kernel.made=Tiktod/g" anykernel.sh
 	sed -i "s/kernel.version=.*/kernel.version=$LINUXVER/g" anykernel.sh
 	sed -i "s/message.word=.*/message.word=$MESSAGE/g" anykernel.sh
