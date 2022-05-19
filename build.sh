@@ -56,7 +56,7 @@ MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
 NAMA=EW
-JENIS=Zeppelin
+JENIS=Siren
 VARIAN=HMP
 ANU=CAF
 
@@ -186,7 +186,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 # Function to replace defconfig versioning
 setversioning() {
     # For staging branch
-    KERNELNAME="$NAMA-$JENIS-$VARIAN-$ANU-$LINUXVER"
+    KERNELNAME="$NAMA-$JENIS-$VARIAN-$ANU-$LINUXVER-$DATE"
     # Export our new localversion and zipnames
     export KERNELNAME
     export ZIPNAME="$KERNELNAME.zip"
